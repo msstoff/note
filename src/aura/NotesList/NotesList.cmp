@@ -1,0 +1,27 @@
+<aura:component controller="PersNotesListController" implements="flexipage:availableForRecordHome,force:hasRecordId">
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+    <aura:attribute name="notes" type="PersonalNote__c[]" />
+    <aura:attribute name="recordId" type="ID" />
+    <aura:attribute name="numRows" type="Integer" default="5" />
+    
+    <lightning:card iconName="custom:custom83" title="Personal Notes">
+        <table data-reactroot="" class="slds-table slds-table_bordered slds-table_cell-buffer">
+            <thead>
+                <tr class="slds-text-title_caps">
+                    <th scope="col">
+                        <div class="slds-truncate" title="NoteDate">Date</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="NoteSubject">Subject</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{!v.notes}" var="aNote">
+                    <c:NoteListItem aNote="{!aNote}" />
+                </aura:iteration>
+            </tbody>
+        </table>
+    </lightning:card>
+
+</aura:component>

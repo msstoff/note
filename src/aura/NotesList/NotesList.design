@@ -1,0 +1,3 @@
+<design:component >
+	<design:attribute name="numRows" label="numRows" description="Number of rows to return and display" />
+</design:component>

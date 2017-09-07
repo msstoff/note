@@ -1,0 +1,14 @@
+<aura:component >
+    <!-- this component is used in the context of an iteration -->
+    <aura:attribute name="aNote" type="PersonalNote__c" />
+    <tr>
+        <th scope="row" data-label="NoteDate">
+            <a onclick="{!c.navToRecord}">
+                <div class="slds-truncate" title="NoteDate">{!v.aNote.Name}</div>
+            </a>
+        </th>
+        <td data-label="NoteSubject">
+            <div class="slds-truncate" title="NoteSubject">{!v.aNote.Subject__c}</div>
+        </td>
+    </tr>
+</aura:component>
